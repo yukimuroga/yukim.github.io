@@ -1,0 +1,888 @@
+@charset "UTF-8";
+
+/*共通部分*/
+html{
+font-size:100%;
+}
+body {
+    font-family: "Noto Sans JP", "Antro Vectra Bolder", sans-serif;
+    line-height: 1.6;
+    color: #000;
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Antro Vectra Bolder";
+    src: url("fonts/Antro_Vectra_Bolder.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+.pc-br {
+    display: inline;
+  }
+  .sp-br {
+    display: none;
+  }
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+}
+.wrapper{
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+/* ヘッダーを固定 */
+.page-header {
+    position: fixed; /* 画面上部に固定 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white; 
+    display: flex;
+    padding-top: 43px ;
+    padding-left: 593px; 
+    z-index: 1000;
+    height: 117px; 
+}
+body {
+    padding-top: 117px; 
+}
+.main-nav {
+    display: flex;
+    gap: 20px; 
+    font-size: 1rem;
+    list-style: none;
+    letter-spacing: 0.05rem;
+}
+.main-nav a {
+    color: #000;
+    text-decoration: none;
+    padding: 10px;
+}
+.main-nav a:hover {
+    color: #E8E6E6;
+}
+.home-content {
+    position: relative;
+    display: flex;
+    justify-content: center; 
+}
+.home-content p {
+    position: absolute;
+    font-family: "Antro Vectra Bolder" ;
+    font-size: 30px;
+    transform: rotate(-9deg); 
+    display: inline-block; 
+    color: #007A88;
+    top: 85px;
+    left: 65px;
+    opacity: 0; 
+    animation: fadeIn 2s ease-in forwards;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.home-content h2{
+    position: absolute;
+    font-size: 70px;
+    font-weight: 400; 
+    line-height: 1.4;
+    top: 132px;
+    left: 31px;
+}
+.home-content img{
+    position: absolute;
+    height: 400px;
+    width: 600px;
+    top: 43px;
+    right: 34px;
+    z-index: -1; /* 画像を背面に */
+}
+.grid{
+    display: grid;
+    gap: 26px;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    margin-top: 6%;
+    margin-bottom: 50px;
+}
+.portfolio-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2列 */
+    gap: 90px; /* 作品間の余白 */
+    max-width: 980px;
+    margin: 500px auto 150px;
+}
+.portfolio-item {
+    text-align: center;
+    padding: 20px;
+}
+.portfolio-item{
+    height: 240px;
+    width: 380px;
+}
+.portfolio-item p{
+    padding: 12px;
+    color: #000;
+    font-size: 15px;
+    letter-spacing: 0.1rem;
+}
+.portfolio-item p:hover {
+    color:#E8E6E6;
+}
+.text-container {
+    display: flex;
+    align-items: baseline;
+    gap: 10px; /* 文字間の余白 */
+}
+.big-text{
+    font-size: 38px;
+    font-weight: 400; 
+    line-height: 1;
+}
+.small-text{
+    font-size: 20px;
+    line-height: 1;
+}
+.about img{
+    height: 234px;
+    width: 303px;
+    margin-top: 75px;
+}
+.about1{
+    display: flex;
+    align-items: flex-start;
+    gap: 35px;
+    margin-bottom: 90px;
+}
+.name1{
+    font-size: 15px;
+    margin-top: 70px;
+    padding-bottom: 5px;
+}
+.name2{
+    font-size: 30px;
+    padding-bottom: 15px;
+}
+.about4{
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+.aboutbutton{
+    display: inline-block; 
+    height: 40px;
+    width: 140px;
+    font-size: 14px;  
+    letter-spacing: 0.05rem;
+    color: #007A88;
+    background-color: #fff; 
+    border: 2px solid #007A88; 
+    border-radius: 50px;
+    text-align: center;          
+    line-height: 40px;  
+}
+.aboutbutton:hover{
+    color: #fff;
+    background-color: #007A88; 
+}
+.half-circle {
+    width: 100vw;
+    max-width: none; /* 最大幅の制限を解除 */
+    margin: 0 auto;
+    padding: 0 4%;
+    height: auto; 
+    background-color: rgba(0, 122, 136, 0.4); /* 背景色だけ透明 */
+    border-radius: 100px 100px 0 0; /* 上部のみ丸くする */
+}
+.Contact1{
+    font-size: 160px;
+    color: #fff;
+    font-weight: 700; 
+    text-align: center;
+    animation: scaleUpCenter 0.6s ease-out forwards;
+    transform-origin: center;
+}
+@keyframes scaleUpCenter {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+.Contact3{
+    font-size: 22px;
+    color: #fff;
+    padding-bottom: 26px;
+}
+.Contact4{
+    padding-bottom: 260px;
+    font-size: 14px;
+    color: #fff;
+}
+#scrollTopBtn {
+    position: fixed;  /* 画面上の固定位置 */
+    bottom: 88px;     /* 画面の下からの距離 */
+    left: 70px;      /* 画面の右からの距離 */
+    width: 100px;
+    height: 100px;
+    background-color: #007A88;
+    color: white;
+    font-size: 24px;
+    border: none;
+    border-radius: 50%; /* 丸いボタン */
+    display: none; /* 最初は非表示 */
+    border: 1px solid transparent;
+}
+#scrollTopBtn:hover {
+    background-color: #FAFAFA;
+    color: #007A88;
+    border:1px solid #007A88;
+}
+.Contact5{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center; 
+    gap: 70px;
+}
+.Contact6 {
+    display: block;
+    margin-left: auto; 
+    margin-right: 40px; 
+}
+form div{
+    padding-left: 40px;
+}
+/* 入力フィールドのラベル */
+label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #fff;
+    display: block;
+}
+
+/* テキスト入力・メール入力フィールド */
+input[type="text"],
+input[type="email"] {
+    height: 40px;
+    width: 400px; 
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    margin-bottom: 24px;
+}
+
+/* テキストエリア（メッセージ入力） */
+textarea {
+    width: 400px;
+    height: 75px;  
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 24px;
+}
+
+/* 送信ボタン */
+input[type="submit"] {
+    height: 43px;
+    width: 86px;
+    border: 1px solid #007A88;  
+    cursor: pointer;
+    color: #007A88;
+    border-radius: 100px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* 送信ボタンのホバーエフェクト */
+input[type="submit"]:hover {
+    background-color: #007A88;
+    color: #fff;
+}
+footer {
+    display: flex;
+    justify-content: center; /* 横方向の中央揃え */
+    align-items: center;     /* 縦方向の中央揃え */
+    height: 34px;
+    background-color: #A1A5A7;
+    color: #fff;
+    font-size: 10px;
+    text-align: center;
+}
+.abouttext-overlay {
+    height: 123px;
+    position: relative;
+  }
+.text-top{
+    position: absolute;
+    font-size: 22px;
+    top: 97px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.text-bottom{
+    position: absolute;
+    font-size: 150px;
+    font-weight: 700;
+    top: -60px;
+    left: 0;
+    color: #E8E6E6;
+    z-index: -1; 
+    width: 0; /* 初期状態では幅が0 */
+    opacity: 0; /* 初期状態では透明 */
+    transform-origin: left; /* 左側から展開 */
+    animation: expandFromLeft 5s forwards; /* アニメーションを適用 */
+}
+
+@keyframes expandFromLeft {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 100%; /* 最終的に横幅が100% */
+        opacity: 1; /* 完全に表示 */
+    }
+}
+.about9{
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+.name3{
+    padding-top: 52px;
+    font-size: 15px;
+}
+.name4{
+    font-size: 30px;
+}
+.about6{
+    padding-top: 20px;
+    font-size: 14px;
+}
+.about8 {
+    height: 350px !important;
+    width: 306px !important;
+    object-fit: cover;
+    transform: rotate(5deg); 
+}
+.MySkills {
+    background-color: rgba(242, 241, 235, 0.5);
+    width: 100%;              /* 背景は画面いっぱい */
+    box-sizing: border-box;
+}
+.MySkills-contents{
+    position: relative;
+    padding-bottom: 80px; /* skillbutton用に余白追加 */
+}
+.text-container2 {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    width: 980px; /* 幅980px */
+    margin: 0 auto; /* 中央寄せ */
+}
+.big-text2{
+    font-size: 38px;
+    font-weight: 400; 
+    line-height: 1;
+    margin-top: 40px;
+}
+.small-text2{
+    font-size: 20px;
+    line-height: 1;
+    padding-bottom: 77px;
+}
+.Figma{
+    display: flex;
+    align-items: flex-start;
+    gap: 35px;
+    padding-bottom: 45px;
+    width: 980px; /* 幅980px */
+}
+.about img.Figma1 {
+    height: 70px;
+    width: 61px;
+    margin-top: 0; 
+}
+.Figma3{
+    font-size: 16ps;
+    font-weight: 700;
+    padding-bottom: 5px;
+}
+.Figma4{
+    font-size: 14px;
+}
+.WIX{
+    display: flex;
+    align-items: flex-start;
+    gap: 45px;
+    padding-bottom: 45px;
+    width: 980px; /* 幅980px */
+    margin: 0 auto; /* 中央寄せ */
+}
+.about img.WIX1 {
+    height: 60px;
+    width: 50px;
+    margin-top: 0; 
+}
+.WIX3{
+    font-size: 16ps;
+    font-weight: 700;
+    padding-bottom: 5px;
+}
+.WIX4{
+    font-size: 14px;
+}
+.Canva{
+    display: flex;
+    align-items: flex-start;
+    gap: 35px;
+    padding-bottom: 45px;
+    width: 980px; /* 幅980px */
+    margin: 0 auto; /* 中央寄せ */
+}
+.about img.Canva1 {
+    height: 60px;
+    width: 60px;
+    margin-top: 0; 
+}
+.Canva3{
+    font-size: 16ps;
+    font-weight: 700;
+    padding-bottom: 5px;
+}
+.Canva4{
+    font-size: 14px;
+}
+.MySkills0{
+    font-size: 14px;
+    width: 980px; /* 幅980px */
+    margin: 0 auto; /* 中央寄せ */
+}
+.skillbutton{
+    height: 45px;
+    width: 169px;
+    font-size: 14px;  
+    letter-spacing: 0.05rem;
+    color: #007A88;
+    border: 1px solid #007A88; 
+    border-radius: 50px;  
+    position: absolute;
+    right: 25px;
+    bottom: 40px;
+}
+.skillbutton:hover{
+    color: #fff;
+    background-color: #007A88; 
+}
+.work1text-overlay {
+    height: 123px;
+    position: relative;
+  }
+.text-top1{
+    position: absolute;
+    font-size: 22px;
+    top: 97px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.text-bottom1{
+    position: absolute;
+    font-size: 150px;
+    font-weight: 700;
+    top: -60px;
+    left: 0;
+    color: #E8E6E6;
+    z-index: -1; 
+    width: 0; /* 初期状態では幅が0 */
+    opacity: 0; /* 初期状態では透明 */
+    transform-origin: left; /* 左側から展開 */
+    animation: expandFromLeft 5s forwards; /* アニメーションを適用 */
+}
+
+@keyframes expandFromLeft {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 100%; /* 最終的に横幅が100% */
+        opacity: 1; /* 完全に表示 */
+    }
+}
+.worka1{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 77px;
+    margin-top: 43px;
+    margin-bottom: 12px;
+}
+.worka3{
+    margin-top: 117px;
+    font-size: 16px;
+}
+.worka4{
+    height: 318px;
+    width: 473px;
+}
+.work1-line {
+    width: 847px;
+    height: 1px;
+    margin-bottom: 80px;
+    background-color:#E8E6E6;
+    margin: 0 auto 50px auto; 
+  }
+  .info-list {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 900px;
+    padding-bottom: 74px;
+  }
+  .info-row {
+    font-size: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .info-title {
+    width: 90px; 
+  }
+  .works1-content2 {
+    background-color: rgba(242, 241, 235, 0.5);
+    width: 100%;              /* 背景は画面いっぱい */
+    box-sizing: border-box;
+}
+.work1image {
+    padding: 74px 0;
+    display: flex;
+    gap: 67px;
+    align-items: flex-start; /* 画像の上部を揃える */
+}
+.work1image1 img,
+.work1image2 img {
+    display: block; 
+    max-width: 100%; 
+    height: auto;
+}
+.work1image1{
+    width: 622px; 
+}
+.work1image2{
+    width: 225px; 
+}
+.more-work {
+    height: 300px;
+    background: radial-gradient(circle at 20% 50%, rgba(173, 255, 173, 0.4), transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(255, 183, 128, 0.4), transparent 50%),
+                radial-gradient(circle at center, rgba(255, 255, 204, 0.3), transparent 70%);
+}
+.more-work1{
+    height: 100%;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    gap: 240px;
+}
+.more-work2{
+    font-size: 20px;
+    color: #000;
+}
+.more-work3{
+    font-size: 45px;
+    font-weight: 300;
+    color: #000;
+}
+.more-work4{
+    font-size: 20px;
+    color: #000;
+}
+.more-work2:hover {
+    letter-spacing: 0.1em;
+}
+.more-work3:hover {
+    letter-spacing: 0.1em;
+}
+.more-work4:hover {
+    letter-spacing: 0.1em;
+}
+@media screen and (max-width: 600px) {
+.wrapper{
+    max-width: 430px;
+}
+.pc-br {
+    display: none;
+  }
+  .sp-br {
+    display: inline;
+  }
+.page-header {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 0;
+}
+.main-nav {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 0; 
+    padding: 0;
+}
+.home-content p {
+    position: absolute;
+    font-size: 13px;
+    transform: rotate(-18deg);
+    left: 230px;
+    top: 50px;
+}
+.home-content h2{
+    position: absolute;
+    top: 0px;
+    font-size: 30px;
+    font-weight: 400; 
+    line-height: 1.5;
+}
+.home-content img {
+    position: absolute;
+    height: 187px;
+    width: 280px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100px;
+}
+.portfolio-list {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 150px;
+}
+.big-text{
+    font-size: 28px;
+}
+.small-text{
+    font-size: 16px;
+    line-height: 1;
+}
+.about img {
+    display: block;
+    height: 212px;
+    width: 250px;
+    margin: 30px auto 0 auto;
+}
+.about1{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 90px;
+}
+.name1{
+    font-size: 14px;
+    margin-top: 10px;
+    padding-bottom: 3px;
+}
+.name2{
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+.about4{
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+.Contact1{
+    font-size: 61px;
+    padding-bottom: 10px;
+}
+.Contact3{
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+.Contact4{
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+.Contact5{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 20px;
+}
+input[type="text"],
+input[type="email"] {
+    width: 300px;
+    margin-bottom: 24px;
+    margin: 0 auto 24px auto; 
+}
+textarea {
+    width: 300px;
+    margin-bottom: 24px;
+}
+input[type="submit"] {
+    font-size: 14px;
+}
+form div{
+    padding-left: 0px
+}
+#scrollTopBtn {
+    position: fixed;  /* 画面上の固定位置 */
+    bottom: 30px;     /* 画面の下からの距離 */
+    left: 30px;      /* 画面の右からの距離 */
+    width: 60px;
+    height: 60px;
+    font-size: 14px;
+    border: none;
+    border-radius: 50%; /* 丸いボタン */
+    display: none; /* 最初は非表示 */
+    border: 1px solid transparent;
+}
+.abouttext-overlay {
+    height: 70px;
+    position: relative;
+  }
+.text-top{
+    position: absolute;
+    font-size: 15px;
+    top: 10px;
+}
+.text-bottom{
+    font-size: 75px;
+}
+.about9{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+.name3{
+    padding-top: 0px;
+    font-size: 14px;
+}
+.name4{
+    font-size: 25px;
+}
+.about6{
+    font-size: 14px;
+}
+.big-text2{
+    font-size: 28px;
+}
+.small-text2{
+    font-size: 16px;
+    line-height: 1;
+}
+.Figma{
+    width: 100%;
+    padding-bottom: 30px;
+}
+.WIX{
+    padding-bottom: 30px;
+    width: 100%; 
+}
+.about img.WIX1 {
+    margin-left: 5px;
+}
+.Canva{
+    padding-bottom: 30px;
+    width: 100%; /* 幅980px */
+}
+.MySkills0{
+    font-size: 14px;
+    width: 100%; /* 幅980px */
+    margin: 0 auto; /* 中央寄せ */
+}
+.skillbutton{
+    height: 42px;
+    width: 120px;
+    font-size: 14px;  
+    right: 25px;
+    bottom: 40px;
+}
+.work1text-overlay {
+    height: 70px;
+    position: relative;
+  }
+.text-top1{
+    position: absolute;
+    font-size: 15px;
+    top: 10px;
+}
+.text-bottom1{
+    font-size: 75px;
+}
+.worka4{
+    height: 188px;
+    width: 280px;
+}
+.worka1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0%;
+    margin-bottom: 40px;
+    gap: 30px;
+}
+.worka3{
+    margin-top: 30px;
+    font-size: 16px;
+}
+.worka4{
+    height: 208px;
+    width: 300px;
+}
+.work1-line {
+    width: 300px;
+    height: 1px;
+    margin-bottom: 40px;
+  }
+  .info-list {
+    gap: 20px;
+    padding-bottom: 74px;
+  }
+  .info-row {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .info-title {
+    color: #C5C5C5;
+  }
+.work1image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 60px;
+}
+.more-work {
+    height: 114px;
+}
+.more-work1{
+    height: 100%;
+    gap: 40px;
+}
+.more-work2{
+    font-size: 15px;
+}
+.more-work3{
+    font-size: 25px;
+}
+.more-work4{
+    font-size: 15px;
+}
+}
