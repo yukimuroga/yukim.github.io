@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Webデザイナームロガユウキのポートフォリオサイト">
+    <title>MurogaYuki PortfolioSite</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+<link href="css/style.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="home">
+     <header class="page-header">
+        <div class="wrapper">
+         <nav>
+            <ul class="main-nav wrapper">
+                <li><a href="index.html">Top</a></li>
+                <li><a href="About.html">About</a></li>    
+                <li><a href="Work.html">Work</a></li>   
+                <li><a href="#Contact">Contact</a></li>
+            </ul>
+         </nav>  
+        </div>  
+     </header>
+
+       <div class="home-content wrapper">
+          <div class="flex">
+            <p>Thank you visiting my site ! </p>
+            <h2 class="page-title">Muroga Yuki<br class="pc-br"><br class="sp-br">Portforio Site</h2>
+          </div>
+          <img src="images/DSC_1604_edited_edited.png" alt="プロフィール写真1">
+       </div> 
+
+        <div class="portfolio-list wrapper" id="portfolio">
+          <div class="portfolio-item">
+            <a href="work.html">
+                <img src="images/work1.png" alt="架空経営コンサル会社のWebサイト">
+                <p>架空経営コンサル会社のWebサイト</p>
+            </a>
+          </div>
+          <div class="portfolio-item">
+            <a href="リンク先のURL">
+                <img src="images/work2.png" alt="架空レンタルオフィスのWebサイト">
+                <p>架空レンタルオフィスのWebサイト</p>
+            </a>
+          </div>
+          <div class="portfolio-item">
+            <a href="リンク先のURL">
+                <img src="images/work3.png" alt="架空歯科医院のLPサイト">
+                <p>架空歯科医院のLPサイト</p>
+            </a>
+          </div>
+          <div class="portfolio-item">
+            <a href="リンク先のURL">
+                <img src="images/work4.png" alt="架空チーズタルト店のLPサイト">
+                <p>架空チーズタルト店のLPサイト</p>
+            </a>
+          </div>
+          <div class="portfolio-item">
+            <a href="リンク先のURL">
+                <img src="images/work5.png" alt="Canvaおすすめ機能バナー">
+                <p>Canvaおすすめ機能バナー</p>
+            </a>
+          </div>
+        </div>
+        <div class="about wrapper">
+            <div class="text-container">
+             <h2 class="big-text">About</h2>
+             <p class="small-text">私について</p>
+            </div>
+            <div class="about1">
+             <img src="images/DSC_1682_JPG .jpg" alt="プロフィール写真2" class="about2">
+              <div class="about3">
+               <p class="name1">ムロガ ユウキ</p>
+               <p class="name2">YUKI MUROGA</p>
+               <p class="about4">
+                1997年、宮城県出身。大学卒業後は金融機関にて約3年間従事。<br class="pc-br"><br class="sp-br">
+                結婚を機に改めて自分を見つめ直し、以前より興味を持っていたWEBデザインを<br class="pc-br">
+                学ぶことに。<br class="pc-br"><br class="sp-br">
+                2024年よりWEBデザインスクールに入学し、勉強を始める。<br class="pc-br"><br class="sp-br">
+               </p>
+               <a href="about.html" class="aboutbutton">詳しく見る →</a>
+              </div>
+            </div>
+        </div>
+        <div class="Contact" id="Contact">
+            <div class="half-circle">
+                <h1 class="Contact1">Contact</h1>
+                <div class="Contact5 wrapper">
+                    <div class="Contact2">
+                       <p class="Contact3">
+                           ポートフォリオをご覧いただき<br class="pc-br">
+                           ありがとうございます！
+                       </p>
+                       <p class="Contact4">
+                           制作物のご依頼はメールにて承ります。<br class="pc-br">
+                           いつでもお気軽にご連絡ください。
+                       </p>
+                       <button id="scrollTopBtn">↑</button>
+                    </div>
+                    <form action="#">
+                       <div>
+                           <label for="name">お名前</label>
+                           <input type="text" id="name" name="your-name">
+                       </div>
+                       <div>
+                           <label for="email">メールアドレス</label>
+                           <input type="email" id="email" name="your-email"> 
+                       </div>
+                       <div>
+                           <label for="massage">メッセージ</label>
+                           <textarea id="message" name="your-message"></textarea>
+                       </div>
+                       <div class="Contact6">
+                       <input type="submit" class="button" value="送信する">
+                       </div>
+                    </form>
+                 </div>
+            </div>
+        </div>
+    </div> 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const scrollTopBtn = document.getElementById("scrollTopBtn");
+          const contactTitle = document.querySelector(".Contact1");
+    
+          if (contactTitle) {
+            const observer = new IntersectionObserver((entries, observer) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("animate");
+                  observer.unobserve(entry.target); 
+                }
+              });
+            }, {
+              threshold: 0.5 // 画面の50%以上表示されたときに発火
+            });
+      
+            observer.observe(contactTitle);
+          }
+      
+          window.addEventListener("scroll", function () {
+            if (window.scrollY > 200) {
+              scrollTopBtn.style.display = "block";
+            } else {
+              scrollTopBtn.style.display = "none";
+            }
+          });
+
+          scrollTopBtn.addEventListener("click", function () {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          });
+        });
+      </script>
+
+     <footer>
+         <div class="wrapper">
+            <p><small>&copy;Copyright 2025 YUKI MUROGA</small></p>
+        </div>    
+    </footer>
+</body>
+</html>
+
+
