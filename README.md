@@ -1,1 +1,0 @@
-# yukim.github.io
