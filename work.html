@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Webデザイナームロガユウキのポートフォリオサイト">
+    <title>MurogaYuki PortfolioSite</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="works1">
+        <header class="page-header">
+            <div class="wrapper">
+                <nav>
+                    <ul class="main-nav wrapper">
+                        <li><a href="index.html">Top</a></li>
+                        <li><a href="About.html">About</a></li>    
+                        <li><a href="Work.html">Work</a></li>   
+                        <li><a href="index.html#Contact">Contact</a></li>
+                    </ul>
+                </nav>  
+            </div>  
+        </header> 
+
+        <div class="works1-content">
+            <div class="work1text-overlay wrapper">
+                <p class="text-top1">制作詳細</p>
+                <h2 class="text-bottom1">WORKS</h2>
+            </div> 
+            <div class="works1 wrapper">
+                <div class="worka1">
+                     <p class="worka3">架空経営コンサル会社のWebサイト</p>
+                     <img src="images/work1.png" alt="架空経営コンサル会社のWebサイト" class="worka4">
+                </div>
+                <div class="work1-line"></div> 
+                <div class="info-list">
+                    <div class="info-row">
+                      <div class="info-title">制作期間</div>
+                      <div class="info-content">3週間</div>
+                    </div>
+                    <div class="info-row">
+                      <div class="info-title">使用ツール</div>
+                      <div class="info-content">WIX</div>
+                    </div>
+                    <div class="info-row">
+                      <div class="info-title">ターゲット</div>
+                      <div class="info-content">
+                        ・財務管理や経営戦略のサポートを求めている中小企業の経営者管理職<br class="pc-br">
+                        ・事業拡大や収益向上のためのアドバイスを必要としている個人事業主<br class="pc-br">
+                        ・家計の見直しを考えている個人
+                      </div>
+                    </div>
+                    <div class="info-row">
+                      <div class="info-title">目的</div>
+                      <div class="info-content">コンサル内容に興味をもったユーザーをセミナーの予約に誘導し、申し込みに繋げる</div>
+                    </div>
+                    <div class="info-row">
+                      <div class="info-title">デザイン</div>
+                      <div class="info-content">
+                        経営の見直しや、家計の収支管理の効率化を検討しているユーザーが、どのようなサービスを受けられるのか、<br class="pc-br">
+                        必要な情報にすぐ辿り着けるかが重要であると考えました。<br class="sp-br">トップページに「サービス内容」を配置し、Axis<br class="pc-br">
+                        Groupの実績のグラフを配置したページへリンクするようにしたことで、データで実績をユーザーが把握し興味<br class="pc-br">
+                        を持ったのちに、サービス内容やスタッフの紹介などの詳細な情報を得られる各ページを閲覧ができる導線にし<br class="pc-br">
+                        ています。<br class="pc-br"><br class="sp-br">
+                        会社情報、サービス内容等、主要なコンテンツへのアクセスが容易なメニュー構成にし、かつ、各コンテンツの<br class="pc-br">
+                        ページ下部には問い合わせフォームへリンクするボタンを設置しています。WEBサイトのページを閲覧する中<br class="pc-br">
+                        で、ユーザーを自然に問い合わせボタンへ誘導することで、生じた疑問点を解消しやすい構造になるよう配置し<br class="pc-br">
+                        ました。<br class="sp-br">問い合わせ方法については、ユーザーの利便性を考慮して電話、メール、チャットでの問い合わせが可<br class="pc-br">
+                        能な設計としています。<br class="pc-br">
+                      </div>
+                    </div>
+                  </div>
+            </div> 
+        </div>
+        <div class="works1-content2">
+            <div class="work1image wrapper">
+                <img src="images/screencapture-editor-wix-html-editor-web-renderer-edit-6c96efe3-c741-43fa-8163-af353adb26e0-2025-01-11-10_00_07_edited.jpg" alt="架空経営コンサル会社のWebサイトpc版" class="work1image1">
+                <img src="images/IMG_62CCA6A9B2EC-1 (1).jpeg" alt="架空経営コンサル会社のWebサイトスマホ版" class="work1image2">
+            </div>
+            <div class="work1image2 wrapper">
+            <button id="scrollTopBtn">↑</button>
+            </div>
+        </div>
+        <div class="more-work">
+            <div class="more-work1 wrapper">
+                <a href="#" class="more-work2">«Back</a>
+                <a href="#" class="more-work3">more work</a>
+                <a href="#" class="more-work4">Next »</a>
+            </div>
+        </div>
+    </div> 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const scrollTopBtn = document.getElementById("scrollTopBtn");
+        
+            // スクロール時の処理
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 200) { // 200px 以上スクロールしたら表示
+                    scrollTopBtn.style.display = "block";
+                } else {
+                    scrollTopBtn.style.display = "none";
+                }
+            });
+
+            // ボタンをクリックしたら上に戻る
+            scrollTopBtn.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth" // スムーズスクロール
+                });
+            });
+        });
+        </script>
+    <footer>
+      <div class="wrapper">
+         <p><small>&copy;Copyright 2025 YUKI MUROGA</small></p>
+     </div>    
+ </footer>
+</body>
+</html>
