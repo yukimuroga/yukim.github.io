@@ -117,7 +117,8 @@ body {
     grid-template-columns: repeat(2, 1fr); /* 2列 */
     gap: 90px; /* 作品間の余白 */
     max-width: 980px;
-    margin: 500px auto 150px;
+    padding-top: 117px;
+    margin-top:-117px;
 }
 .portfolio-item {
     text-align: center;
