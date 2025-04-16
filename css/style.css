@@ -668,7 +668,7 @@ footer {
 }
 .portfolio-list {
     width: 100%;
-    margin-bottom: 20px;
+    margin: 20px auto;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -868,6 +868,9 @@ form div{
     flex-direction: column;
     justify-content: center;
     gap: 60px;
+}
+.work1image2{
+    margin:auto;
 }
 .more-work {
     height: 114px;
