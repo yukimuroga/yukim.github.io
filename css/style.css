@@ -647,6 +647,9 @@ footer {
     margin: 0; 
     padding: 0;
 }
+.home-content {
+    padding-bottom: 100px; 
+}
 .home-content p {
     position: absolute;
     font-size: 13px;
