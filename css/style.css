@@ -68,6 +68,7 @@ body {
     position: relative;
     display: flex;
     justify-content: center; 
+    padding-bottom: 500px; 
 }
 .home-content p {
     position: absolute;
